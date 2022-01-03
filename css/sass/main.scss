@@ -1,0 +1,22 @@
+@import './components/header';
+@import './components/footer';
+@import './sections/blog';
+@import './components/cards';
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    height: 800px;
+    width: 100%;
+    background-color: pink;
+}
+
+#blog-body{
+    a{
+        text-decoration: none;
+    }
+}

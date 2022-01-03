@@ -1,0 +1,86 @@
+footer{
+    background-color: rgb(99, 99, 99);
+    width: 100%;
+    .footer-logo{
+        display: flex;
+        justify-content: center;
+        height: 200px;
+        width: 100%;
+        background-color: rgb(99, 99, 99);
+        img{
+            padding-top: 20px;
+            height: 90%;
+        }
+    }
+    .footer-text-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: rgb(99, 99, 99);
+        .footer-text{
+            color: white;
+            padding-left: 35px;
+            padding-right: 35px;
+            padding-bottom: 35px;
+            p{
+                color: white;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                &:hover{
+                    color: rgb(195, 212, 52);
+                }
+            }
+            a:hover{
+                text-decoration: none;
+            }
+        }
+    }
+    .nav-footer{
+        background-color: rgb(99, 99, 99);
+        height: 70px;
+        width: 100%;
+        box-shadow: rgba(0, 0, 0, 0.50) 0px 3px 6px, rgba(0, 0, 0, 0.40) 0px 3px 6px;
+        display: flex;
+        flex-direction: row;
+        ul{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            height: 100%;
+            width: 70%;
+            li{
+                padding: 10px;
+                list-style: none;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                &:hover{
+                    a{
+                        color: white;
+                        padding-bottom: 5px;
+                        border-bottom: 2px solid rgb(195, 212, 52);
+                        border-spacing: 2px;
+                    }
+                }
+                a{
+                    text-decoration: none;
+                    color: rgb(255, 255, 255);
+                }
+    
+            }
+        }
+        .icon-box{
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgb(99, 99, 99);
+            color: rgb(255, 255, 255);
+            font-size: 26px;
+            flex-grow: 1;
+            box-shadow: rgba(255, 255, 255, 0.16) 0px 3px 6px;
+            &:hover{
+                color: rgb(195, 212, 52);
+            }
+        }
+    }
+}

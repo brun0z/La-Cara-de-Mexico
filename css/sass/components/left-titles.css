@@ -1,0 +1,24 @@
+.side-titles {
+  padding: 30px;
+  background-color: #ececec;
+}
+.side-titles p {
+  color: black;
+}
+.side-titles h2 {
+  color: #c3d434;
+  font-size: 30px;
+  font-weight: bold;
+}
+.side-titles h3 {
+  color: #414141;
+  font-size: 20px;
+  font-weight: bold;
+}
+.side-titles p {
+  margin-bottom: 30px;
+}
+.side-titles a {
+  text-decoration: none;
+  color: black;
+}/*# sourceMappingURL=left-titles.css.map */

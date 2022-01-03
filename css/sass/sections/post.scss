@@ -1,0 +1,98 @@
+
+
+li{
+    list-style: none;
+}
+
+#categorias-container{
+    border: none;
+    background-color: rgb(248, 248, 248);
+    h5{
+        color: rgb(195, 212, 52);
+        font-weight: bold;
+    }
+    .list-unstyled{
+        a{
+            color: black;
+        }
+        a:hover{
+            color: rgb(195, 212, 52);
+            text-decoration: none;
+        }
+        li{
+            padding-bottom: 20px;
+        }
+    }
+}
+
+#recent-news{
+    border: none;
+    background-color: rgb(248, 248, 248);
+    h5{
+        color: rgb(195, 212, 52);
+        font-weight: bold;
+    }
+    #recent-news-titles{
+        a{
+            font-size: 18px;
+            color: black;
+            font-weight: 400;
+        }
+        a:hover{
+            color: rgb(195, 212, 52);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        li{
+            padding-bottom: 20px;
+        }
+    }
+}
+
+#post-main{
+    .post-category{
+        color: rgb(195, 212, 52);
+    }
+    .card{
+        border-bottom: rgb(88, 88, 88);
+    }
+    .card-body{
+        border-bottom: none;
+        height: max-content;
+        padding: 40px;
+        h2{
+            font-weight: bold;
+        }
+        .categoria-date{
+            padding-bottom: 20px;
+        }
+        img{
+            max-width: 600px;
+        }
+        .card-text{
+            padding-bottom: 60px;
+        }
+    }
+}
+
+#comentarios{
+    background-color: rgb(241, 241, 241);
+    .card-header{
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+    }
+    .form-control:focus{
+        border-color: rgb(195, 212, 52);
+        box-shadow: none;
+    }
+}
+
+#comentarios-side{
+    background-color: rgb(54, 54, 54);
+}
+
+.last-banner{
+    background-color: rgb(195, 212, 52);
+    height: 450px;
+    width: 100%;
+  }
