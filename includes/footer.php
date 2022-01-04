@@ -5,30 +5,29 @@
             <img src="./images/logo-w.png" alt="">
         </div>
         <div class="footer-text-container">
-            <div class="footer-text">
+            <div class="footer-text" id="footer-left">
                 <h4>Categorias</h4>
-                <a href=""><p>Ultimas Noticias</p></a>
-            </div>
-            <div class="footer-text">
                 <?php 
-                    if (isset($_GET['pageno'])) {
-                    $pageno = $_GET['pageno'];
-                    } else {
-                    $pageno = 3;
-                    }
-                    $no_of_records_per_page = 3;
-                    $offset = ($pageno-1) * $no_of_records_per_page;
-                    $total_pages_sql = "SELECT COUNT(*) FROM tblposts";
-                    $result = mysqli_query($con,$total_pages_sql);
-                    $total_rows = mysqli_fetch_array($result)[0];
-                    $total_pages = ceil($total_rows / $no_of_records_per_page);
-                    $query=mysqli_query($con,"select tblcategory.CategoryName as category,tblcategory.id as cid, from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 order by tblposts.id desc  LIMIT $offset, $no_of_records_per_page");
-                    while ($row=mysqli_fetch_array($query)) {
+            if (isset($_GET['pageno'])) {
+                $pageno = $_GET['pageno'];
+                } else {
+                $pageno = 1;
+                }
+                $no_of_records_per_page = 4;
+                $total_pages_sql = "SELECT COUNT(*) FROM tblcategory";
+                $result = mysqli_query($con,$total_pages_sql);
+                $total_rows = mysqli_fetch_array($result)[0];
+                $total_pages = ceil($total_rows / $no_of_records_per_page);
+                $query=mysqli_query($con,"select id,CategoryName from tblcategory");
+                    while($row=mysqli_fetch_array($query))
+                    {
                 ?>
-                <a href="category.php?catid=<?php echo htmlentities($row['cid'])?>"><p><?php echo ($row['category']);?></p></a>
-                <?php } ?>
+                <li>
+                    <a href="category.php?catid=<?php echo htmlentities($row['id'])?>"><?php echo htmlentities($row['CategoryName']);?></a>
+                </li>
+            <?php } ?>
             </div>
-            <div class="footer-text">
+            <div class="footer-text" id="footer-right">
                 <h4>Contactenos</h4>
                 <a href="contact.php#contact"><p>Anúnciese con nosotros</p></a>
                 <a href=""><p>Términos y condiciones</p></a>

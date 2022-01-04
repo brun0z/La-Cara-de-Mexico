@@ -1,5 +1,9 @@
 <style>
 
+    #right-news img{
+        border-right: 6px solid rgb(195, 212, 52);
+    }
+
     #right-news .verti h5{
         padding-left: 5px;
     }

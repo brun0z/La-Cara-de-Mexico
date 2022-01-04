@@ -76,8 +76,8 @@ include('includes/config.php');
       <div class="row">
         <!-- Blog Entries Column -->
         <div class="side-titles col-md-3">
-        <h1>Titulos de la semana</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, assumenda? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, assumenda?</p>
+          <ul class="verti" id="title-titles"><h1>Titulos de la semana</h1></ul>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, assumenda? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, assumenda?</p>
           <?php 
             if (isset($_GET['pageno'])) {
             $pageno = $_GET['pageno'];
@@ -93,7 +93,7 @@ include('includes/config.php');
             $query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 order by tblposts.id desc  LIMIT $offset, $no_of_records_per_page");
             while ($row=mysqli_fetch_array($query)) {
           ?>
-          <a href="category.php?catid=<?php echo htmlentities($row['cid'])?>"> <?php echo ($row['category']);?> </a>
+          <a id="side-description" href="category.php?catid=<?php echo htmlentities($row['cid'])?>"> <?php echo ($row['category']);?> </a>
           <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>"> <h3><?php echo ($row['posttitle']);?></h3> </a>
           <!-- Blog Post -->
           <br>
@@ -164,5 +164,6 @@ include('includes/config.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/popper.min.js"></script>
+    <script src="js/nav-bar.js"></script>
   </body>
 </html>

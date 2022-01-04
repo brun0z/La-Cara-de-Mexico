@@ -11,17 +11,15 @@
   <header>
       <img src="./images/logo.png" alt="">
       <nav class="nav-bar">
-          <div class="humburger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-          </div>
-          <ul>
+          <ul class="nav-links">
               <li><a href="index.php">NOTICIAS</a></li>
               <li><a href="blog.php">BLOG</a></li>
               <li><a href="contact.php">CONTACTO</a></li>
           </ul>
           
+          <div class="icon-box" id="hidden-icon"><a href="index.php"><i class="far fa-newspaper"></i></a></div>
+          <div class="icon-box" id="hidden-icon"><a href="blog.php"><i class="fas fa-blog"></i></i></a></div>
+          <div class="icon-box" id="hidden-icon"><a href="contact.php"><i class="fas fa-address-card"></i></a></div>
           <div class="icon-box"><a href="https://www.facebook.com/La-Cara-de-M%C3%A9xico-103362822157236"><i class="fa fa-facebook"></i></a></div>
           <div class="icon-box"><a href=""><i class="fa fa-instagram"></i></a></div>
           <div class="icon-box"><a href=""><i class="fa fa-twitter"></i></a></div>

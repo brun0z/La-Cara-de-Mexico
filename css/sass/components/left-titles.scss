@@ -1,6 +1,10 @@
 .side-titles{
-  padding: 30px;
+    padding: 30px;
     background-color: rgb(236, 236, 236);
+    h1{
+      color: rgb(195, 212, 52);
+      font-weight: bold;
+    }
     p{
       color: black;
     }
@@ -16,6 +20,11 @@
     }
     p{
       margin-bottom: 30px;
+    }
+    #side-description{
+      &:hover{
+        color: rgb(195, 212, 52);
+      }
     }
     a{
       text-decoration: none;

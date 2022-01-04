@@ -39,6 +39,9 @@ header .nav-bar ul li a {
   color: #505050;
   font-size: 22px;
 }
+header .nav-bar #hidden-icon {
+  display: none !important;
+}
 header .nav-bar .icon-box {
   display: flex;
   justify-content: center;
@@ -63,14 +66,14 @@ header .nav-bar .icon-box a:hover {
 
 @media screen and (max-width: 700px) {
   header {
-    background-color: lightgrey;
+    background-color: white;
+  }
+  header li {
+    display: none;
   }
 
-  .humburger .line {
-    padding-bottom: 2px;
-    height: 5px;
-    width: 20px;
-    background-color: grey;
+  #hidden-icon {
+    display: block !important;
   }
 }
 footer {
@@ -99,6 +102,18 @@ footer .footer-text-container .footer-text {
   padding-left: 35px;
   padding-right: 35px;
   padding-bottom: 35px;
+}
+footer .footer-text-container .footer-text li {
+  list-style: none;
+  color: white;
+  padding-bottom: 20px;
+}
+footer .footer-text-container .footer-text li a {
+  color: white;
+  text-decoration: none;
+}
+footer .footer-text-container .footer-text li a:hover {
+  color: #c3d434;
 }
 footer .footer-text-container .footer-text p {
   color: white;
@@ -176,20 +191,34 @@ footer .nav-footer .icon-box:hover {
   padding-right: 0;
 }
 
+#bl-img-wrap {
+  margin-bottom: 35px;
+}
+#bl-img-wrap img {
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+}
+
 .carousel {
   width: 100%;
   background-color: #616261;
 }
 
 #bl-section2 {
-  height: 400px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-bottom: 30px;
 }
 
 #bl-section3 {
   padding-top: 40px;
+  padding-bottom: 40px;
   display: flex;
   justify-content: center;
-  height: 500px;
+  max-height: -webkit-max-content;
+  max-height: -moz-max-content;
+  max-height: max-content;
   background-color: #616261;
 }
 #bl-section3 p {
@@ -223,7 +252,9 @@ footer .nav-footer .icon-box:hover {
 #bl-section4 {
   width: 95%;
   padding-top: 40px;
-  height: 500px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 #bl-section4 h1 {
   font-weight: bold;
@@ -250,9 +281,18 @@ footer .nav-footer .icon-box:hover {
   display: flex;
   justify-content: center;
   background-color: white;
-  height: 450px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
+@media screen and (max-width: 600px) {
+  #bl-section2 {
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+  }
+}
 #middle-content {
   padding-top: 30px;
 }

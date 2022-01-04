@@ -2,6 +2,10 @@
   padding: 30px;
   background-color: #ececec;
 }
+.side-titles h1 {
+  color: #c3d434;
+  font-weight: bold;
+}
 .side-titles p {
   color: black;
 }
@@ -17,6 +21,9 @@
 }
 .side-titles p {
   margin-bottom: 30px;
+}
+.side-titles #side-description:hover {
+  color: #c3d434;
 }
 .side-titles a {
   text-decoration: none;

@@ -4,24 +4,7 @@
   toggle: false
   })
 </script>
-<div class="col-md-4">
-  <?php 
-  $pagetype='aboutus';
-  $query=mysqli_query($con,"select PageTitle,Description from tblpages where PageName='$pagetype'");
-  while($row=mysqli_fetch_array($query))
-  {
-  ?>
-  <div class="card mb-4">
-    <button class="btn" data-toggle="collapse" data-target="#demo">Nosotros</button>
-    <div  id="demo" class="collapse text-black-100">              
-      <?php echo $row['Description'];?>
-    </div>
-    <div class="input-group">
-      <span class="input-group-btn">
-      </span>
-    </div>
-  </div>
-  <?php } ?>
+<div class="col-md-3">
   <!-- Categories Widget -->
   <div class="card my-4" id="categorias-container">
     <h5 class="card-header text-center">Categorías</h5>

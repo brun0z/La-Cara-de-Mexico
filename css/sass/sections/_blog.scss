@@ -15,20 +15,30 @@
     padding-right: 0;
 }
 
+#bl-img-wrap{
+    img{
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+    }
+    margin-bottom: 35px;
+}
+
 .carousel{
     width: 100%;
     background-color: rgb(97, 98, 97 );
 }
 
 #bl-section2{
-    height: 400px;
+    height: max-content;
+    padding-bottom: 30px;
 }
 
 #bl-section3{
     padding-top: 40px;
+    padding-bottom: 40px;
     display: flex;
     justify-content: center;
-    height: 500px;
+    max-height: max-content;
     background-color: rgb(97, 98, 97 );
     p{
         color: white;
@@ -70,7 +80,7 @@
     }
     width: 95%;
     padding-top: 40px;
-    height: 500px;
+    height: max-content;
     .card{
         background-color: rgb(216, 216, 216);
         height: 300px;
@@ -92,5 +102,11 @@
     display: flex;
     justify-content: center;
     background-color: rgb(255, 255, 255);
-    height: 450px;
+    height: max-content;
+}
+
+@media screen and (max-width: 600px){
+    #bl-section2{
+        height: max-content;
+    }
 }

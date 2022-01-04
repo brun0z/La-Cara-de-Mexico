@@ -49,7 +49,7 @@
     <div class="container-fluid" id="post-main">
       <div class="row" style="margin-top: 8%">
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        <div class="col-md-9">
           <!-- Blog Post -->
           <?php
             $pid=intval($_GET['nid']);

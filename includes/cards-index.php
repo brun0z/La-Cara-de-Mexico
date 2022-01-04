@@ -91,16 +91,16 @@ var bsCollapse = new bootstrap.Collapse(myCollapse, {
   <div class="container-fluid">
     <div class=" card-body">
       <div class=" row">
-        <div class=" col-5">
+        <div class=" col-4">
           <div class=" info-icon text-center icon-primary">
             <p> 
             <a href="news-details.php?nid=<?=($row['pid'])?>">   
-              <img  width="100" height="245" class="card-img  bd-placeholder-img bd-placeholder-img-lg "   src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+              <img class="img-fluid  bd-placeholder-img bd-placeholder-img-lg"   src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
             </a>   
             </p>
           </div>
         </div>
-        <div class=" col-7">
+        <div class=" col-8">
             <div class="numbers">
               <a href="news-details.php?nid=<?=($row['pid'])?>">
                 <h5 class="card-title text-dark"><strong><?php echo ($row['posttitle']);?></strong></h5>

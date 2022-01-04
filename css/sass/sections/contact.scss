@@ -6,6 +6,9 @@ section#contact {
     background-image: url("../assets/img/map-image.png");
     background-repeat: no-repeat;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   section#contact .section-heading {
     color: rgb(195, 212, 52);
@@ -56,8 +59,28 @@ section#contact {
     color: #ced4da;
   }
 
+  .alert{
+    text-align: center;
+    display: none;
+  }
+
   .contact-btn{
       button{
         background-color: rgb(195, 212, 52);
       }
+      margin-bottom: 35px;
+  }
+
+  #contact{
+    h3{
+      padding-bottom: 35px;
+    }
+  }
+
+  @media screen and (max-width: 600px){
+
+    section#contact{
+      height: max-content;
+    }
+    
   }

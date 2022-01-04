@@ -39,6 +39,10 @@ header{
             }
         }
 
+        #hidden-icon{
+            display: none !important;
+        }
+
         .icon-box{
             display: flex;
             justify-content: center;
@@ -63,16 +67,15 @@ header{
     }
 }
 
+
 @media screen and (max-width: 700px) {
     header{
-        background-color: lightgrey;
-    }
-    .humburger{
-        .line{
-            padding-bottom: 2px;
-            height: 5px;
-            width: 20px;
-            background-color: grey;
+        background-color: rgb(255, 255, 255);
+        li{
+            display: none;
         }
+    }
+    #hidden-icon{
+        display: block !important;
     }
 }

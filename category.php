@@ -19,6 +19,7 @@
     <link href="css/modern-business.css" rel="stylesheet">
     <script src="//platform-api.sharethis.com/js/sharethis.js#property=5c9e29cf6f05b20011c6d7d3&product=inline-share-buttons"></script>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <link rel="stylesheet" href="css/sass/sections/post.css">
     <script>
       // (adsbygoogle = window.adsbygoogle || []).push({
       //   google_ad_client: "ca-pub-5139634720777851",
@@ -32,10 +33,10 @@
     <?php include('includes/header.php');?>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container-fluid" id="category-section">
       <div class="row" style="margin-top: 4%">
         <!-- Blog Entries Column -->
-        <div class="col-md-8">
+        <div class="col-md-9">
 
           <!-- Blog Post -->
         <?php 
@@ -65,7 +66,6 @@
 
         <h1><?php echo htmlentities($row['category']);?> News</h1>
         <div class="card mb-4">
-          <img class="card-img-top" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
             <div class="card-body">
               <h2 class="card-title"><?php echo htmlentities($row['posttitle']);?></h2>
               <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>" class="btn btn-primary">Read More &rarr;</a>
