@@ -15,7 +15,6 @@ include('includes/config.php');
         <link rel="shortcut icon" href="images/logo.png">
         <title>LA CARA DE MÉXICO | Home Page</title>
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/modern-business.css" rel="stylesheet">
         <link rel="stylesheet" href="./css/sass/sections/contact.css">
     </head>
 
@@ -65,7 +64,7 @@ include('includes/config.php');
                             </div>
                         </div>
                     </div>
-                    <div class="contact-btn text-center"><button class="btn btn-xl text-uppercase text-white" id="submitButton" type="submit">Send Message</button></div>
+                    <div class="contact-btn text-center"><button class="btn btn-xl text-uppercase text-white" id="submitButton" type="submit">Enviar</button></div>
                     <div class="alert"><p>Tu mensaje ha sido enviado</p></div>
                 </form>
             </div>

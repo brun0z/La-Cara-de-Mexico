@@ -91,10 +91,25 @@ li {
   width: 100%;
 }
 
+#category-section h1 {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 #category-section img {
   max-width: 500px;
+}
+#category-section #category-section-card {
+  border-bottom: 2px solid #c3d434;
+}
+#category-section .pagination a {
+  color: #c3d434;
+  font-weight: bold;
 }
 
 button {
   background-color: #c3d434;
+}
+
+#img-margin {
+  margin-bottom: 30px;
 }/*# sourceMappingURL=post.css.map */

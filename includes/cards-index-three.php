@@ -61,7 +61,7 @@ padding:1em 1.5em;
 }
 </style>
   
-<div class="col-md-2" id="right-news">
+<div class="col-lg-2 col-md-12 d-flex flex-column" id="right-news">
     
     <?php 
         if (isset($_GET['pageno'])) {
@@ -79,9 +79,9 @@ padding:1em 1.5em;
         while ($row=mysqli_fetch_array($query)) {
     ?>
     <div class="container-fluid ">
-        <div class="  border-0 col-sm-12 autocomplete-group  ">
-            <div class="row no-gutters ">
-                <div class="col-sm-12">
+        <div class="  border-0 col-sm-12 autocomplete-group ">
+            <div class="row no-gutters">
+                <div class="col-sm-12 d-flex flex-column">
                     <div class="card-body  form-group">
                         <p>
                             <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>">
@@ -95,8 +95,8 @@ padding:1em 1.5em;
                         </ul> 
                         <p class="card-text text-justify"> 
                             <?php $pt=$row['postdetails']; echo  (substr($pt,0));?>
-                            <div class="btn text-white " style=" background-color: rgb(195, 212, 52);">
-                                <small> <?php echo ($row['postingdate']);?></small> 
+                            <div class="btn text-white mt-2 mb-2" style=" background-color: rgb(195, 212, 52); border-radius: 0px;">
+                               <small><strong><?php echo ($row['postingdate']);?></strong></small> 
                             </div>
                         </p>
                         <div class=" button-container text-center  col-sm-12 ">

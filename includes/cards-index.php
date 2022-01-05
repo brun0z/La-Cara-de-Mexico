@@ -26,7 +26,7 @@
   }
 
   #middle-content-bt .numbers{
-    height: 190px;
+    height: 210px;
     overflow: hidden;
   }
 
@@ -52,7 +52,16 @@
   }
 
   #card-body-middle{
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
+  }
+
+  #middle-content-bt .card-body{
+    border-bottom: 1px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .card-body p{
@@ -100,9 +109,9 @@
               <a href="news-details.php?nid=<?=($row['pid'])?>">
                 <h5 class="card-title text-dark"><strong><?php echo ($row['posttitle']);?></strong></h5>
               </a>
-              <div class="btn text-white" style=" background-color: rgb(195, 212, 52);">
-                <small> <?php echo ($row['postingdate']);?></small> 
-              </div>
+              <div class="btn text-white mt-2 mb-2" style=" background-color: rgb(195, 212, 52); border-radius: 0px;">
+                <small><strong><?php echo ($row['postingdate']);?></strong></small> 
+              </div>              
               <p class=" card-category">  <?php $pt=$row['postdetails']; echo  (substr($pt,0));?></p>
             </div>
           </div>

@@ -80,6 +80,22 @@ footer{
                 }
     
             }
+            .dropdown{
+                padding: 10px;
+                display: none;
+                .dropdown-menu{
+                    margin-top: 18px;
+                    .dropdown-item{
+                        color: rgb(58, 58, 58);
+                        border-bottom: none;
+                        &:hover{
+                            background-color: rgb(195, 212, 52);
+                            color: white;
+                        }
+                        
+                    }
+                }
+            }
         }
         .icon-box{
             display: flex;
@@ -95,4 +111,22 @@ footer{
             }
         }
     }
+}
+
+@media screen and (max-width: 700px) {
+    footer{
+        .nav-link1{
+            display: none;
+        }
+        .dropdown{
+            display: block !important;
+        }
+        #footer-mid{
+            display: none;
+        }
+        #footer-right{
+            display: none;
+        }
+    }
+
 }

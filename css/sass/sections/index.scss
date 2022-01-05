@@ -4,8 +4,8 @@
   position: relative;
   z-index: 10;
   .carousel-item {
-    height: 70vh;
-    min-height: 300px;
+    max-height: 650px;
+    min-height: 150px;
     background: no-repeat center center scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -18,7 +18,13 @@
   
   @media screen and (max-width: 500px) {
     .carousel-item{
-      height: 300px;
+      height: 200px;
+    }
+  }
+
+  @media screen and (max-width: 820px) {
+    .carousel-item{
+      height: 400px;
     }
   }
 }
@@ -108,8 +114,4 @@ border-left: thick solid rgb(195, 212, 52);
 
 .portfolio-item {
   margin-bottom: 30px;
-}
-
-img{
-  border-radius: 0px;
 }

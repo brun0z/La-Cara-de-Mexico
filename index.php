@@ -13,7 +13,6 @@ include('includes/config.php');
     <link rel="shortcut icon" href="images/logo.png">
     <title>LA CARA DE MÉXICO | Home Page</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/modern-business.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/sass/sections/index.css">
     <link rel="stylesheet" href="./css/sass/components/left-titles.css">
@@ -36,24 +35,12 @@ include('includes/config.php');
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img src="./images/portada.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="./images/portada.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="./images/portada.png" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -140,8 +127,7 @@ include('includes/config.php');
               <div class=" verticalLine">
                 <h4 class="card-title  text-justify text-white"><strong><?php echo ($row['posttitle']);?></strong></h4>
               </div> 
-              <div class="btn text-white" style=" background-color: rgb(195, 212, 52);">
-                <i class="fas fa-calendar-alt mr-2 "></i> 
+              <div class="btn text-white mt-1 mb-1" style=" background-color: rgb(195, 212, 52); border-radius: 0px;">
                 <small><strong><?php echo ($row['postingdate']);?></strong></small> 
               </div>
               <p class="card-text text-justify"><?php $pt=$row['postdetails']; echo  (substr($pt,0));?></p>

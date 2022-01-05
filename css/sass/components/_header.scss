@@ -42,8 +42,20 @@ header{
             }
         }
 
-        #hidden-icon{
-            display: none !important;
+        .dropdown{
+            padding: 10px;
+            display: none;
+            .dropdown-menu{
+                margin-top: 18px;
+                .dropdown-item{
+                    color: rgb(58, 58, 58);
+                    &:hover{
+                        background-color: rgb(195, 212, 52);
+                        color: white;
+                    }
+                    
+                }
+            }
         }
 
         .icon-box{
@@ -71,14 +83,18 @@ header{
 }
 
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width:700px) {
     header{
         background-color: rgb(255, 255, 255);
-        li{
+        .nav-link1{
             display: none;
         }
-    }
-    #hidden-icon{
-        display: block !important;
+        .dropdown{
+            display: block !important;
+            .dropdown-menu{
+                width: 90%;
+                margin: 0;
+            }
+        }
     }
 }

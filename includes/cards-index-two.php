@@ -7,6 +7,9 @@
 
   #middle-content .card-body{
     height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
   }
 
@@ -36,6 +39,8 @@
   }
 
   .boton{
+    margin-top: 5px;
+    margin-bottom: 5px;
     border-radius: none;
     width: 80px;
     text-align: center;
@@ -63,7 +68,7 @@
 }
 </style>
 
-    <div class="col-sm-7" id="middle-content">
+    <div class="col-lg-7 col-md-9" id="middle-content">
       <!--Articulo #1-->
       <?php 
         if (isset($_GET['pageno'])) {
@@ -99,7 +104,9 @@
               <div class="col-8">
                 <div class=" numbers">
                   <a href="news-details.php?nid=<?=($row['pid'])?>"><h4 class="card-title text-dark" ><strong><?php echo ($row['posttitle']);?></strong></h4></a>
-                  <div class="boton text-white" style=" background-color: rgb(195, 212, 52);"><small> 23 <bold> OCT </bold></small></div>
+                  <div class="btn text-white mt-2 mb-2" style=" background-color: rgb(195, 212, 52); border-radius: 0px;">
+                    <small><strong><?php echo ($row['postingdate']);?></strong></small> 
+                  </div>                  
                   <p class=" card-category">  <?php $pt=$row['postdetails'];echo  (substr($pt,0));?></p>
                 </div>
               </div>

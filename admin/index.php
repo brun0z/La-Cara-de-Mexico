@@ -34,16 +34,6 @@ if(isset($_POST['login']))
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    
-	<script src="//platform-api.sharethis.com/js/sharethis.js#property=5c9e29cf6f05b20011c6d7d3&product=inline-share-buttons"></script>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-5139634720777851",
-    enable_page_level_ads: true
-  });
-</script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="News Portal.">

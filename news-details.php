@@ -57,8 +57,9 @@
             <div class="card-body">
               <h2 class="card-title"><?php echo htmlentities($row['posttitle']);?></h2>
               <p class="categoria-date text-muted"><b>Categoria : </b> <a class="post-category" href="category.php?catid=<?php echo htmlentities($row['cid'])?>"><?php echo htmlentities($row['category']);?></a> |<b>Sub Categoria : </b><?php echo htmlentities($row['subcategory']);?> <b> Publicado en </b><?php echo htmlentities($row['postingdate']);?></p>
-              <img class="mx-auto p-4 d-block" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
-              <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+              <div class="text-center" id="img-margin">
+               <img class="card-img bd-placeholder-img bd-placeholder-img-lg mx-auto img-fluid" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+              </div>
               <p class="card-text"><?php 
               $pt=$row['postdetails'];
               echo  (substr($pt,0));?></p> 

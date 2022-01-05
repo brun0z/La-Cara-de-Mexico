@@ -98,11 +98,28 @@ li{
   }
 
 #category-section{
+    h1{
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
     img{
         max-width: 500px;
+    }
+    #category-section-card{
+        border-bottom: 2px solid rgb(195, 212, 52);
+    }
+    .pagination{
+        a{
+            color: rgb(195, 212, 52);
+            font-weight: bold;
+        }
     }
 }
 
 button{
     background-color: rgb(195, 212, 52);
+}
+
+#img-margin{
+    margin-bottom: 30px;
 }

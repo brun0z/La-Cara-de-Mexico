@@ -16,12 +16,12 @@
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/modern-business.css" rel="stylesheet">
     <link rel="stylesheet" href="css/sass/sections/post.css">
+    <link rel="stylesheet" href="css/sass/main.css">
   </head>
 
   <body>
     <!-- Navigation -->
     <?php include('includes/header.php');?>
-
     <!-- Page Content -->
     <div class="container-fluid" id="category-section">
       <div class="row" style="margin-top: 4%">
@@ -55,10 +55,10 @@
           ?>
 
         <h1><?php echo htmlentities($row['category']);?> News</h1>
-        <div class="card mb-4">
+        <div class="card mb-4" id="category-section-card">
             <div class="card-body">
               <h2 class="card-title"><?php echo htmlentities($row['posttitle']);?></h2>
-              <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>" class="btn btn-primary">Read More &rarr;</a>
+              <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>" class="btn text-white" style=" background-color: rgb(195, 212, 52)">Leer más &rarr;</a>
             </div>
             <div class="card-footer text-muted">
               Posted on <?php echo htmlentities($row['postingdate']);?>
@@ -67,7 +67,7 @@
         <?php } ?>
 
         <ul class="pagination justify-content-center mb-4">
-          <li class="page-item"><a href="?pageno=1"  class="page-link">First</a></li>
+          <li class="page-item"><a href="?pageno=1"  class="page-link ">First</a></li>
           <li class="<?php if($pageno <= 1){ echo 'disabled'; } ?> page-item">
               <a href="<?php if($pageno <= 1){ echo '#'; } else { echo "?pageno=".($pageno - 1); } ?>" class="page-link">Prev</a>
           </li>

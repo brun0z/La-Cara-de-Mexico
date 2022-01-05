@@ -5,27 +5,18 @@
             <img src="./images/logo-w.png" alt="">
         </div>
         <div class="footer-text-container">
-            <div class="footer-text" id="footer-left">
+           <div class="footer-text" id="footer-left">
                 <h4>Categorias</h4>
-                <?php 
-            if (isset($_GET['pageno'])) {
-                $pageno = $_GET['pageno'];
-                } else {
-                $pageno = 1;
-                }
-                $no_of_records_per_page = 4;
-                $total_pages_sql = "SELECT COUNT(*) FROM tblcategory";
-                $result = mysqli_query($con,$total_pages_sql);
-                $total_rows = mysqli_fetch_array($result)[0];
-                $total_pages = ceil($total_rows / $no_of_records_per_page);
-                $query=mysqli_query($con,"select id,CategoryName from tblcategory");
-                    while($row=mysqli_fetch_array($query))
-                    {
-                ?>
-                <li>
-                    <a href="category.php?catid=<?php echo htmlentities($row['id'])?>"><?php echo htmlentities($row['CategoryName']);?></a>
-                </li>
-            <?php } ?>
+                <a href="category.php?catid=2"><p>Politica</p></a>
+                <a href="category.php?catid=3"><p>Economia</p></a>
+                <a href="category.php?catid=4"><p>Sociedad</p></a>
+                <a href="category.php?catid=6"><p>Internacional</p></a>
+            </div>
+            <div class="footer-text" id="footer-mid">
+                <a href="contact.php#contact"><p>Destacadas</p></a>
+                <a href="category.php?catid=5"><p>Deportes</p></a>
+                <a href="category.php?catid=7"><p>Entretenimiento</p></a>
+                <a href="category.php?catid=8"><p>Salud</p></a>
             </div>
             <div class="footer-text" id="footer-right">
                 <h4>Contactenos</h4>
@@ -37,9 +28,19 @@
         </div>
         <div class="nav-footer">
             <ul>
-                <li><a href="index.php">NOTICIAS</a></li>
-                <li><a href="blog.php">BLOG</a></li>
-                <li><a href="contact.php">CONTACTO</a></li>
+                <li class="nav-link1"><a href="index.php">NOTICIAS</a></li>
+                <li class="nav-link1"><a href="blog.php">BLOG</a></li>
+                <li class="nav-link1"><a href="contact.php">CONTACTO</a></li>
+                <li class="nav-link dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  MENU
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="index.php">NOTICIAS</a>
+                  <a class="dropdown-item" href="blog.php">BLOG</a>
+                  <a class="dropdown-item" href="contact.php">CONTACTO</a>
+                </div>
+              </li>
             </ul>
             <div class="icon-box"><i class="fa fa-facebook"></i></div>
             <div class="icon-box"><i class="fa fa-instagram"></i></div>

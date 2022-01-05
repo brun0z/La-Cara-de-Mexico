@@ -32,25 +32,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p>
-                        </div>
+                        <img src="./images/portada.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="..." class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Second slide label</h5>
-                            <p>Some representative placeholder content for the second slide.</p>
-                        </div>
                     </div>
                     <div class="carousel-item">
                         <img src="..." class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Third slide label</h5>
-                            <p>Some representative placeholder content for the third slide.</p>
-                        </div>
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -105,12 +93,14 @@
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle">Lorem ipsum</h6>
                 <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-body">
                 <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle">Lorem ipsum</h6>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                 </div>
             </div>
