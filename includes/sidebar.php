@@ -1,9 +1,3 @@
-<script>
-  var myCollapse = document.getElementById('myCollapse')
-  var bsCollapse = new bootstrap.Collapse(myCollapse, {
-  toggle: false
-  })
-</script>
 <div class="col-md-3">
   <!-- Categories Widget -->
   <div class="card my-4" id="categorias-container">

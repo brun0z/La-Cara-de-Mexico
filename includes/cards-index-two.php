@@ -62,12 +62,6 @@
   }
 }
 </style>
-<script>
-var myCollapse = document.getElementById('myCollapse')
-var bsCollapse = new bootstrap.Collapse(myCollapse, {
-  toggle: false
-})
-  </script>
 
     <div class="col-sm-7" id="middle-content">
       <!--Articulo #1-->

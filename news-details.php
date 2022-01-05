@@ -30,15 +30,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5c9e29cf6f05b20011c6d7d3&product=inline-share-buttons"></script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <link rel="shortcut icon" href="images/logo.png">
     <title> LA CARA DE MÉXICO | Home Page</title>
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/modern-business.css" rel="stylesheet">
     <link rel="stylesheet" href="css/sass/sections/post.css">
   </head>
   <body>
@@ -60,7 +57,7 @@
             <div class="card-body">
               <h2 class="card-title"><?php echo htmlentities($row['posttitle']);?></h2>
               <p class="categoria-date text-muted"><b>Categoria : </b> <a class="post-category" href="category.php?catid=<?php echo htmlentities($row['cid'])?>"><?php echo htmlentities($row['category']);?></a> |<b>Sub Categoria : </b><?php echo htmlentities($row['subcategory']);?> <b> Publicado en </b><?php echo htmlentities($row['postingdate']);?></p>
-              <img class="mx-auto d-block" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+              <img class="mx-auto p-4 d-block" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
               <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
               <p class="card-text"><?php 
               $pt=$row['postdetails'];
@@ -105,7 +102,7 @@
               <div class="form-group">
                 <textarea class="form-control" name="comment" rows="3" placeholder="Comentario" required></textarea>
               </div>
-              <button type="submit" class="btn btn-primary" name="submit">Enviar</button>
+              <button style=" background-color: rgb(195, 212, 52);" type="submit" class="btn btn-primary" name="submit">Enviar</button>
               </form>
             </div>
         </div>

@@ -31,3 +31,24 @@
       color: black;
     }
 }
+
+#side-titles{
+  #title-titles{
+    margin-top: 40px;
+    padding-left: 10px;
+  }
+  #etiqueta{
+    position: absolute;
+    left: 0;
+    height: 20px;
+    width: 130px;
+    background-color: black;
+    display: flex;
+    justify-content: end;
+    span{
+      color: white;
+      font-size: 12px;
+      padding-right: 10px;
+    }
+  }
+}

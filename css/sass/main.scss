@@ -12,7 +12,6 @@
 main{
     height: 800px;
     width: 100%;
-    background-color: pink;
 }
 
 #blog-body{
@@ -20,3 +19,13 @@ main{
         text-decoration: none;
     }
 }
+
+.carousel-item {
+    height: 70vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }

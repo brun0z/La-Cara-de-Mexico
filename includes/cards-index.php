@@ -65,12 +65,7 @@
   }
 }
 </style>
-<script>
-var myCollapse = document.getElementById('myCollapse')
-var bsCollapse = new bootstrap.Collapse(myCollapse, {
-  toggle: false
-})
-  </script>
+
 <div class="cards-bottom col-lg-6 col-sm-12" id="middle-content-bt">
   <?php 
     if (isset($_GET['pageno'])) {

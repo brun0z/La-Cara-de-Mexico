@@ -12,11 +12,8 @@ include('includes/config.php');
     <meta name="author" content="">
     <link rel="shortcut icon" href="images/logo.png">
     <title>LA CARA DE MÉXICO | Home Page</title>
-    <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/modern-business.css" rel="stylesheet">
-    <script src="//platform-api.sharethis.com/js/sharethis.js#property=5c9e29cf6f05b20011c6d7d3&product=inline-share-buttons"></script>
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/sass/sections/index.css">
     <link rel="stylesheet" href="./css/sass/components/left-titles.css">
@@ -38,21 +35,21 @@ include('includes/config.php');
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="./images/portada.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>First slide label</h5>
                             <p>Some representative placeholder content for the first slide.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="./images/portada.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Second slide label</h5>
                             <p>Some representative placeholder content for the second slide.</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
+                        <img src="./images/portada.png" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Third slide label</h5>
                             <p>Some representative placeholder content for the third slide.</p>
@@ -72,10 +69,13 @@ include('includes/config.php');
     </div>
 
     <!-- Page Content -->
-    <div class="container-fluid">
+    <div class="container-fluid" id="side-titles">
       <div class="row">
         <!-- Blog Entries Column -->
         <div class="side-titles col-md-3">
+          <div id="etiqueta">
+            <span>Lorem ipsum</span>
+          </div>
           <ul class="verti" id="title-titles"><h1>Titulos de la semana</h1></ul>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, assumenda? Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, assumenda?</p>
           <?php 
@@ -125,7 +125,7 @@ include('includes/config.php');
             $result = mysqli_query($con,$total_pages_sql);
             $total_rows = mysqli_fetch_array($result)[0];
             $total_pages = ceil($total_rows / $no_of_records_per_page);
-            $query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate as postingdate,tblposts.PostUrl as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 order by tblposts.id desc  LIMIT $offset, $no_of_records_per_page");
+            $query=mysqli_query($con,"select tblposts.id as pid,tblposts.PostTitle as posttitle,tblposts.PostImage,tblcategory.CategoryName as category,tblcategory.id as cid,tblsubcategory.Subcategory as subcategory,tblposts.PostDetails as postdetails,tblposts.PostingDate  as postingdate,tblposts.PostUrl  as url from tblposts left join tblcategory on tblcategory.id=tblposts.CategoryId left join  tblsubcategory on  tblsubcategory.SubCategoryId=tblposts.SubCategoryId where tblposts.Is_Active=1 order by tblposts.id desc  LIMIT $offset, $no_of_records_per_page");
             while ($row=mysqli_fetch_array($query)) {
           ?>
 
@@ -133,7 +133,7 @@ include('includes/config.php');
               <div class="grey-section-container">
                 <p>
                   <a href="news-details.php?nid=<?php echo htmlentities($row['pid'])?>">
-                  <img class="card-img bd-placeholder-img bd-placeholder-img-lg featurette-image  mx-auto"  width="300" height="500" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+                  <img class="card-img bd-placeholder-img bd-placeholder-img-lg  mx-auto img-fluid" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
                   </a>
                 </p>
               </div>
@@ -163,7 +163,5 @@ include('includes/config.php');
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/nav-bar.js"></script>
   </body>
 </html>

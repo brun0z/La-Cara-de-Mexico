@@ -1,17 +1,16 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Oct 10, 2021 at 07:03 AM
--- Server version: 5.7.23
--- PHP Version: 7.2.10
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 05-01-2022 a las 04:11:35
+-- Versión del servidor: 10.4.22-MariaDB
+-- Versión de PHP: 8.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
-    
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -19,109 +18,103 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `news`
+-- Base de datos: `news`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbladmin`
+-- Estructura de tabla para la tabla `tbladmin`
 --
 
-DROP TABLE IF EXISTS `tbladmin`;
-CREATE TABLE IF NOT EXISTS `tbladmin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tbladmin` (
+  `id` int(11) NOT NULL,
   `AdminUserName` varchar(255) NOT NULL,
   `AdminPassword` varchar(255) NOT NULL,
   `AdminEmailId` varchar(255) NOT NULL,
   `Is_Active` int(11) NOT NULL,
-  `CreationDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `UpdationDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `CreationDate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `UpdationDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbladmin`
+-- Volcado de datos para la tabla `tbladmin`
 --
 
 INSERT INTO `tbladmin` (`id`, `AdminUserName`, `AdminPassword`, `AdminEmailId`, `Is_Active`, `CreationDate`, `UpdationDate`) VALUES
-(1, 'admin', '$2y$12$i4LMfeFPQpGSNPTaccIkKuwxAkJ4PhBr3JND7FpXwWFjRvchQn17C', 'noidatut@gmail.com', 1, '2019-05-27 17:51:00', '2019-05-30 18:21:07');
+(1, 'admin', '$2y$10$7tdMhLyjW7h3Snbr5PCtWukO3lerjH4oYf1LSxwP9pNZKD19ZaEl2', 'noidatut@gmail.com', 1, '2019-05-27 17:51:00', '2021-12-31 23:29:08'),
+(2, 'nicocalarco', 'nicocalarco', '', 1, '2021-12-31 23:10:10', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblcategory`
+-- Estructura de tabla para la tabla `tblcategory`
 --
 
-DROP TABLE IF EXISTS `tblcategory`;
-CREATE TABLE IF NOT EXISTS `tblcategory` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tblcategory` (
+  `id` int(11) NOT NULL,
   `CategoryName` varchar(200) DEFAULT NULL,
-  `Description` mediumtext,
-  `PostingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `UpdationDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  `Is_Active` int(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+  `Description` mediumtext DEFAULT NULL,
+  `PostingDate` timestamp NULL DEFAULT current_timestamp(),
+  `UpdationDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
+  `Is_Active` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblcategory`
+-- Volcado de datos para la tabla `tblcategory`
 --
 
 INSERT INTO `tblcategory` (`id`, `CategoryName`, `Description`, `PostingDate`, `UpdationDate`, `Is_Active`) VALUES
-(2, 'Bollywood', 'Bollywood News', '2018-06-06 10:28:09', '2018-06-30 18:41:07', 1),
-(3, 'Sports', 'Related to sports news', '2018-06-06 10:35:09', '2018-06-14 11:11:55', 1),
-(5, 'Entertainment', 'Entertainment related  News', '2018-06-14 05:32:58', '2018-06-14 05:33:41', 1),
-(6, 'Politics', 'Politics', '2018-06-22 15:46:09', '0000-00-00 00:00:00', 1),
-(7, 'Business', 'Business', '2018-06-22 15:46:22', '0000-00-00 00:00:00', 1);
+(2, 'Política', 'Política', '2018-06-06 10:28:09', '2021-12-31 21:10:31', 1),
+(3, 'Economía', 'Economía', '2018-06-06 10:35:09', '2021-12-31 21:10:44', 1),
+(4, 'Sociedad', 'Sociedad', '2018-06-14 05:32:58', '2022-01-03 16:26:54', 1),
+(5, 'Deportes', 'Deportes', '2018-06-22 15:46:09', '2022-01-03 16:27:03', 1),
+(6, 'Internacional', 'Internacional', '2018-06-22 15:46:22', '2022-01-03 16:27:11', 1),
+(7, 'Entretenimiento', 'Entretenimiento', '2022-01-01 20:09:42', '2022-01-03 16:27:22', 1),
+(8, 'Salud', 'Salud', '2022-01-01 20:10:33', '2022-01-03 16:27:31', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblcomments`
+-- Estructura de tabla para la tabla `tblcomments`
 --
 
-DROP TABLE IF EXISTS `tblcomments`;
-CREATE TABLE IF NOT EXISTS `tblcomments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tblcomments` (
+  `id` int(11) NOT NULL,
   `postId` char(11) DEFAULT NULL,
   `name` varchar(120) DEFAULT NULL,
   `email` varchar(150) DEFAULT NULL,
-  `comment` mediumtext,
-  `postingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` int(1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+  `comment` mediumtext DEFAULT NULL,
+  `postingDate` timestamp NULL DEFAULT current_timestamp(),
+  `status` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblcomments`
+-- Volcado de datos para la tabla `tblcomments`
 --
 
 INSERT INTO `tblcomments` (`id`, `postId`, `name`, `email`, `comment`, `postingDate`, `status`) VALUES
 (1, '12', 'Anuj', 'anuj@gmail.com', 'Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.', '2018-11-21 11:06:22', 1),
 (2, '12', 'Test user', 'test@gmail.com', 'This is sample text for testing.', '2018-11-21 11:25:56', 1),
-(3, '7', 'ABC', 'abc@test.com', 'This is sample text for testing.', '2018-11-21 11:27:06', 1),
-(4, '11', 'Aadarsh Malviya', 'aadarshmalviya@gmail.com', 'test', '2019-06-18 20:27:28', 1);
+(3, '7', 'ABC', 'abc@test.com', 'This is sample text for testing.', '2018-11-21 11:27:06', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblpages`
+-- Estructura de tabla para la tabla `tblpages`
 --
 
-DROP TABLE IF EXISTS `tblpages`;
-CREATE TABLE IF NOT EXISTS `tblpages` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tblpages` (
+  `id` int(11) NOT NULL,
   `PageName` varchar(200) DEFAULT NULL,
-  `PageTitle` mediumtext,
-  `Description` longtext,
-  `PostingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `PageTitle` mediumtext DEFAULT NULL,
+  `Description` longtext DEFAULT NULL,
+  `PostingDate` timestamp NULL DEFAULT current_timestamp(),
+  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblpages`
+-- Volcado de datos para la tabla `tblpages`
 --
 
 INSERT INTO `tblpages` (`id`, `PageName`, `PageTitle`, `Description`, `PostingDate`, `UpdationDate`) VALUES
@@ -131,64 +124,132 @@ INSERT INTO `tblpages` (`id`, `PageName`, `PageTitle`, `Description`, `PostingDa
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblposts`
+-- Estructura de tabla para la tabla `tblposts`
 --
 
-DROP TABLE IF EXISTS `tblposts`;
-CREATE TABLE IF NOT EXISTS `tblposts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `PostTitle` longtext,
+CREATE TABLE `tblposts` (
+  `id` int(11) NOT NULL,
+  `PostTitle` longtext DEFAULT NULL,
   `CategoryId` int(11) DEFAULT NULL,
   `SubCategoryId` int(11) DEFAULT NULL,
-  `PostDetails` longtext CHARACTER SET utf8,
-  `PostingDate` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
-  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `PostDetails` longtext CHARACTER SET utf8 DEFAULT NULL,
+  `PostingDate` date DEFAULT current_timestamp(),
+  `UpdationDate` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `Is_Active` int(1) DEFAULT NULL,
-  `PostUrl` mediumtext,
-  `PostImage` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+  `PostUrl` mediumtext DEFAULT NULL,
+  `PostImage` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblposts`
+-- Volcado de datos para la tabla `tblposts`
 --
 
 INSERT INTO `tblposts` (`id`, `PostTitle`, `CategoryId`, `SubCategoryId`, `PostDetails`, `PostingDate`, `UpdationDate`, `Is_Active`, `PostUrl`, `PostImage`) VALUES
-(7, 'Jasprit Bumrah ruled out of England T20I series due to injury', 3, 4, '<p style=\"margin-bottom: 15px; padding: 0px; font-size: 16px; font-family: PTSans, sans-serif;\"><span style=\"margin: 0px; padding: 0px; font-weight: 700;\">The Indian Cricket Team has received a huge blow right ahead of the commencement of the much-awaited series against England. Star speedster Jasprit Bumrah has been ruled out of the forthcoming 3-match T20I series as he suffered an injury in his left thumb.</span></p><p style=\"margin-bottom: 15px; padding: 0px; font-size: 16px; font-family: PTSans, sans-serif;\">The 24-year-old pacer picked up a niggle during India’s first T20I match against Ireland played on June 27 at the Malahide cricket ground in Dublin. As per the reports, he is likely to be available for the ODI series against England scheduled to start from July 12.</p><p style=\"margin-bottom: 15px; padding: 0px; font-size: 16px; font-family: PTSans, sans-serif;\">In the first, Bumrah exhibited a phenomenal performance with the ball. In his quota of four overs, he conceded 19 runs and picked 2 wickets at an economy rate of 4.75.</p><p style=\"margin-bottom: 15px; padding: 0px; font-size: 16px; font-family: PTSans, sans-serif;\">Post his injury, he arrived at team’s optional training session on Thursday but didn’t train. Later, he was rested in the second face-off along with MS Dhoni, Shikhar Dhawan and Bhuvneshwar Kumar.</p><p style=\"margin-bottom: 15px; padding: 0px; font-size: 16px; font-family: PTSans, sans-serif;\">As of now, no replacement has been announced. However, Umesh Yadav may be be given chance in the team in Bumrah’s absence.</p><p style=\"padding: 0px; font-size: 16px; font-family: PTSans, sans-serif;\">The first T20I match between India and England will be played at Old Trafford, Manchester on July 3.</p>', '2018-06-30 18:49:23', '2018-08-28 15:57:32', 1, 'Jasprit-Bumrah-ruled-out-of-England-T20I-series-due-to-injury', '6d08a26c92cf30db69197a1fb7230626.jpg'),
-(10, 'Tata Steel, Thyssenkrupp Finalise Landmark Steel Deal', 7, 9, '<h1 style=\"box-sizing: inherit; margin-top: 0px; padding: 0px; font-family: Roboto, sans-serif; font-size: 38px; line-height: normal; letter-spacing: -0.5px; color: rgb(51, 51, 51);\"><span itemprop=\"headline\" style=\"box-sizing: inherit;\">Tata Steel, Thyssenkrupp Finalise Landmark Steel Deal</span>Tata Steel, Thyssenkrupp Finalise Landmark Steel DealTata Steel, Thyssenkrupp Finalise Landmark Steel DealTata Steel, Thyssenkrupp Finalise Landmark Steel DealTata Steel, Thyssenkrupp Finalise Landmark Steel Deal</h1>', '2018-06-30 19:08:56', '2018-08-28 15:59:59', 1, 'Tata-Steel,-Thyssenkrupp-Finalise-Landmark-Steel-Deal', '505e59c459d38ce4e740e3c9f5c6caf7.jpg'),
-(11, 'UNs Jean Pierre Lacroix thanks India for contribution to peacekeeping', 6, 8, '<p>UNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeepingUNs Jean Pierre Lacroix thanks India for contribution to peacekeeping<br></p>', '2018-06-30 19:10:36', '2018-08-28 16:01:35', 1, 'UNs-Jean-Pierre-Lacroix-thanks-India-for-contribution-to-peacekeeping', '27095ab35ac9b89abb8f32ad3adef56a.jpg'),
-(12, 'Shah holds meeting with NE states leaders in Manipur', 6, 7, '<p><span style=\"color: rgb(25, 25, 25); font-family: &quot;Noto Serif&quot;; font-size: 16px;\">New Delhi: BJP president Amit Shah today held meetings with his party leaders who are in-charge of 11 Lok Sabha seats spread across seven northeast states as part of a drive to ensure that it wins the maximum number of these constituencies in the general election next year.</span><br style=\"box-sizing: inherit; color: rgb(25, 25, 25); font-family: &quot;Noto Serif&quot;; font-size: 16px;\"><br style=\"box-sizing: inherit; color: rgb(25, 25, 25); font-family: &quot;Noto Serif&quot;; font-size: 16px;\"><webviewcontentdata style=\"box-sizing: inherit; color: rgb(25, 25, 25); font-family: &quot;Noto Serif&quot;; font-size: 16px;\">Shah held separate meetings with Lok Sabha toli (group) of Arunachal Pradesh, Tripura, Meghalaya, Mizoram, Nagaland, Sikkim and Manipur in Manipur, the partys media head Anil Baluni said.<br style=\"box-sizing: inherit;\"><br style=\"box-sizing: inherit;\">Baluni said that Shah was in West Bengal for two days before he arrived in Manipur. The BJP chief would reach Odisha tomorrow.</webviewcontentdata><br></p>', '2018-06-30 19:11:44', '2018-08-28 16:01:43', 1, 'Shah-holds-meeting-with-NE-states-leaders-in-Manipur', '7fdc1a630c238af0815181f9faa190f5.jpg');
+(3, 'El futbolista argentino Lionel Messi ganó su séptimo Balón de Oro.', 5, NULL, 'El galardón individual más prestigioso que un jugador puede ganar en el fútbol mundial,\r\neste pasado lunes 29 de noviembre.\r\n\r\nMessi superó al polaco Robert Lewandowski. Después de que en 2020 no se entregó el premio, el jugador del Bayern Munich se quedó con el premio del mejor delantero del año.', '2021-12-30', NULL, 1, NULL, 'news-9.jpg'),
+(4, '¡Netflix lo vuelve hacer! La plataforma vuelve aumentar los precios de dos de sus planes, este primero de Noviembre del 2021.', 3, NULL, 'Afirma la plataforma de streaming, que el aumento no tiene nada que ver con el impuesto de Valor Agregado (IVA), que el año pasado fue impuesto por el congreso. Que el objetivo del aumento de precio es por estrategia de generación de contenido, es decir, crear nuevas películas y series para seguir entreteniendo a sus consumidores.\r\n<br>\r\nSi tu bolsillo puede soportar este aumento, te compartimos los nuevos precios de la plataforma Netflix en México:\r\nPlan Básico - 139 pesos (se mantiene)\r\nPlan Estándar - 219 pesos (antes 196)\r\nPlan Premium - 299 pesos (antes 266)\r\n<br>\r\nComo pudiste observar el único que se congela es el plan básico, el vocero de Netflix predica que no lo cambiaran para que la gente tenga la posibilidad de adquirir uno de sus planes, sin golpear tanto el bolsillo. Como si este año no fuera ya pesado con la inflación que va dejando a su paso la situación de la contingencia sanitaria.\r\n<br>\r\nCabe señalar que el cambio de precios se aplicará tanto a los nuevos suscriptores, como a los usuarios ya inscritos en la plataforma. Este mes, Netflix tendrá la ardua tarea de notificar a sus casi 9 millones de suscriptores de este nuevo aumento de precio, además que las tarifas nuevas entran en vigor con los nuevos miembros.', '2021-12-30', NULL, 1, NULL, 'news-8.jpg'),
+(5, 'Ciudad de México ha ganado el Récord Guinness a la ciudad más conectada del mundo.', 4, NULL, 'Ciudad de México ha ganado el Récord Guinness a la ciudad más conectada del mundo esto debido a sus 21.500 puntos de internet gratuitos en toda la ciudad.\r\n<br>\r\nLa capital se impone así a otras grandes urbes como lo es Moscú, Seúl y Tokio en el segundo, tercero y cuarto lugar, y aprovechando el galardón el Gobierno ha anunciado que extenderá los puntos de internet gratuitos a las escuelas.\r\n<br>\r\nEn los 21.500 puntos de acceso se realizan semanalmente más de 2,8 millones de conexiones, que han permitido el intercambio de 3,3 terabytes de información, el equivalente a 58 millones de videos en alta definición, 1.289 millones de canciones o más de 17.500 millones de fotos. ¿puedes creerlo?', '2021-12-30', NULL, 1, NULL, 'news-7.jpg'),
+(6, 'La vaquita marina podría ser el próximo animal en extinguirse.', 6, 10, 'Sabías que solo quedan unas diez de estos animales que se encuentran en peligro de extinción, a pesar de eso los científicos dicen que aún hay esperanza. Su destino depende en gran medida del gobierno MEXICANO</p>\r\n</br>\r\nLos primeros resultados del estudio de las vaquitas de este año, demuestran que esta especie de animales siguen existiendo, pero al limite de poder extinguirse. Los expertos en mamíferos marinos dicen que la recuperación es posible, pero solo si su hábitat queda libre de redes de enmalle.', '2021-12-29', NULL, 1, NULL, 'news-6.png'),
+(7, 'Por primera vez en la historia, un avión Airbus A340 aterrizó en la Antártida. ', 6, 10, 'Dado que la mayoría de las personas llegan a la Antártida en barco. ¿sabías este dato?\r\n<br>\r\nVer el aterrizaje del A340 en una pista de hielo es verdaderamente dramático y significa que probablemente habrá más vuelos de este tipo en el futuro.\r\nCabe mencionar que actualmente el continente no cuenta con un aeropuerto, es decir aterrizaron en cualquier área libre y además en una superficie que es totalmente inestable y resbalosa', '2018-06-30', '2022-01-05 00:40:54', 1, '', 'news-4.jpg'),
+(8, 'Te presentamos la misión: \"DART\".', 6, 11, 'Es una nave espacial fabricada por la NASA junto con Space X y tiene una misión importante que es: destruir un asteroide.\r\n\r\nEstamos presenciando la primera de prueba de defensa planetaria para prevenir que los asteroides impacten a la Tierra en cualquier momento, así es en estos momentos se acaba de lanzar un cohete para que se estrelle contra un asteroide en un intento de cambiar su trayectoria para que en un futuro la raza humana pueda prevenir una catástrofe a nivel global.', '2021-12-29', '2022-01-05 00:41:13', 1, NULL, 'news-5.jpg'),
+(10, 'El costo de vida de los estadounidenses se a disparado.', 3, NULL, 'La tasa de inflación interanual en noviembre se elevó a 6,8%, y es considerada como la mayor cifra registrada en el país en 39 años, los atascos en las cadenas de suministro y la crisis energética son algunas de las causas que hicieron subir el precio de bienes y servicios en plena temporada de compras.', '2018-06-30', '2022-01-03 01:30:43', 1, '', 'news-3.jpg'),
+(11, 'EUA autorizo compra de refinería \"Deer Park\"', 3, NULL, 'El Presidente de México aseguró que esta autorización es una “buena noticia”\r\n<br>\r\nAMLO resaltó en la mañanera como “algo histórico” esta noticia, el presidente Andrés Manuel López Obrador informó que el gobierno de Estados Unidos autorizó la compra de la refinería Deer Park, en Houston, Texas, a Petróleos Mexicanos (Pemex) por parte de la empresa Shell.', '2018-06-30', '2022-01-03 01:30:55', 1, '', 'news-2.jpg'),
+(12, 'Niño recibe boletos para Coldplay y banda lo convierte en invitado VIP.', 4, NULL, 'Una usuaria de TikTok llamada María José Hernández subió un video a la red social donde muestra la reacción de su sobrino cuando vio uno de sus regalos de navidad, eran ¡boletos para Coldplay! Pues aparentemente el pequeño, de aproximadamente 11 años, es fanático de la banda británica.\r\n<br>\r\nCauso emoción en muchas personas y se hizo viral, el video recopila más de 700 mil vistas y más de 70 mil comentarios, aunque el que más llamó la atención provienede la cuenta oficial de Coldplay, escrito a nombre de Phil Harvey, co-manager de la banda, quien invitó al pequeño y sus acompañantes a un espacio VIP.\r\n<br>\r\n¿Puedes creerlo?', '2021-12-15', '2022-01-05 00:42:57', 1, '', 'news-1.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tblsubcategory`
+-- Estructura de tabla para la tabla `tblsubcategory`
 --
 
-DROP TABLE IF EXISTS `tblsubcategory`;
-CREATE TABLE IF NOT EXISTS `tblsubcategory` (
-  `SubCategoryId` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `tblsubcategory` (
+  `SubCategoryId` int(11) NOT NULL,
   `CategoryId` int(11) DEFAULT NULL,
   `Subcategory` varchar(255) DEFAULT NULL,
-  `SubCatDescription` mediumtext,
-  `PostingDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `UpdationDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
-  `Is_Active` int(1) DEFAULT NULL,
-  PRIMARY KEY (`SubCategoryId`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+  `SubCatDescription` mediumtext DEFAULT NULL,
+  `PostingDate` timestamp NOT NULL DEFAULT current_timestamp(),
+  `UpdationDate` timestamp NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE current_timestamp(),
+  `Is_Active` int(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tblsubcategory`
+-- Índices para tablas volcadas
 --
 
-INSERT INTO `tblsubcategory` (`SubCategoryId`, `CategoryId`, `Subcategory`, `SubCatDescription`, `PostingDate`, `UpdationDate`, `Is_Active`) VALUES
-(3, 5, 'Bollywood ', 'Bollywood masala', '2018-06-22 15:45:38', '0000-00-00 00:00:00', 1),
-(4, 3, 'Cricket', 'Cricket\r\n\r\n', '2018-06-30 09:00:43', '0000-00-00 00:00:00', 1),
-(5, 3, 'Football', 'Football', '2018-06-30 09:00:58', '0000-00-00 00:00:00', 1),
-(6, 5, 'Television', 'TeleVision', '2018-06-30 18:59:22', '0000-00-00 00:00:00', 1),
-(7, 6, 'National', 'National', '2018-06-30 19:04:29', '0000-00-00 00:00:00', 1),
-(8, 6, 'International', 'International', '2018-06-30 19:04:43', '0000-00-00 00:00:00', 1),
-(9, 7, 'India', 'India', '2018-06-30 19:08:42', '0000-00-00 00:00:00', 1);
+--
+-- Indices de la tabla `tbladmin`
+--
+ALTER TABLE `tbladmin`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tblcategory`
+--
+ALTER TABLE `tblcategory`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tblcomments`
+--
+ALTER TABLE `tblcomments`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tblpages`
+--
+ALTER TABLE `tblpages`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tblposts`
+--
+ALTER TABLE `tblposts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `tblsubcategory`
+--
+ALTER TABLE `tblsubcategory`
+  ADD PRIMARY KEY (`SubCategoryId`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `tbladmin`
+--
+ALTER TABLE `tbladmin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `tblcategory`
+--
+ALTER TABLE `tblcategory`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `tblcomments`
+--
+ALTER TABLE `tblcomments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT de la tabla `tblpages`
+--
+ALTER TABLE `tblpages`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `tblposts`
+--
+ALTER TABLE `tblposts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT de la tabla `tblsubcategory`
+--
+ALTER TABLE `tblsubcategory`
+  MODIFY `SubCategoryId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

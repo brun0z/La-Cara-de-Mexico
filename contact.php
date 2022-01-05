@@ -14,12 +14,8 @@ include('includes/config.php');
         <meta name="author" content="">
         <link rel="shortcut icon" href="images/logo.png">
         <title>LA CARA DE MÉXICO | Home Page</title>
-        <!-- Bootstrap core CSS -->
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <!-- Custom styles for this template -->
         <link href="css/modern-business.css" rel="stylesheet">
-        <script src="//platform-api.sharethis.com/js/sharethis.js#property=5c9e29cf6f05b20011c6d7d3&product=inline-share-buttons"></script>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <link rel="stylesheet" href="./css/sass/sections/contact.css">
     </head>
 
