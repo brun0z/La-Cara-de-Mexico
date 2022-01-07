@@ -32,13 +32,13 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
+                        <img src="./images/portada-blog.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/portada2.png" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
                         <img src="./images/portada.png" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="..." class="d-block w-100" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
