@@ -12,9 +12,9 @@
       <a href="index.php"><img class="img-fluid bd-placeholder-img bd-placeholder-img-lg" src="./images/logo.png" alt=""></a>
       <nav class="nav-bar">
           <ul class="nav-links">
-              <li class="nav-link1"><a href="index.php">NOTICIAS</a></li>
-              <li class="nav-link1"><a href="blog.php">BLOG</a></li>
-              <li class="nav-link1"><a href="contact.php">CONTACTO</a></li>
+              <a href="index.php"><li class="nav-link1">NOTICIAS</li></a>
+              <a href="blog.php"><li class="nav-link1">BLOG</li></a>
+              <a href="contact.php"><li class="nav-link1">CONTACTO</li></a>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   MENU

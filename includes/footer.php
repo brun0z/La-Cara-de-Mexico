@@ -28,9 +28,9 @@
         </div>
         <div class="nav-footer">
             <ul>
-                <li class="nav-link1"><a href="index.php">NOTICIAS</a></li>
-                <li class="nav-link1"><a href="blog.php">BLOG</a></li>
-                <li class="nav-link1"><a href="contact.php">CONTACTO</a></li>
+                <a href="index.php"><li class="nav-link1">NOTICIAS</li></a>
+                <a href="blog.php"><li class="nav-link1">BLOG</li></a>
+                <a href="contact.php"><li class="nav-link1">CONTACTO</li></a>
                 <li class="nav-link dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   MENU

@@ -32,7 +32,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./images/portada-blog.png" class="d-block w-100" alt="...">
+                        <img src="./images/portada-blog.png" class="d-block w-100 img-fluid" alt="...">
                     </div>
                     <div class="carousel-item">
                         <img src="./images/portada2.png" class="d-block w-100" alt="...">

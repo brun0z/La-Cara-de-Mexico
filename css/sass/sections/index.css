@@ -11,17 +11,7 @@
   background-size: cover;
 }
 #hm-section1 .carousel-item img {
-  height: 100%;
-}
-@media screen and (max-width: 500px) {
-  #hm-section1 .carousel-item {
-    height: 200px;
-  }
-}
-@media screen and (max-width: 820px) {
-  #hm-section1 .carousel-item {
-    height: 400px;
-  }
+  height: auto;
 }
 
 a {
@@ -88,18 +78,6 @@ a:hover {
   margin: 1.6rem 0.8rem;
 }
 
-.card {
-  grid-row: auto/span 1;
-  grid-column: auto/span 1;
-  background-color: white;
-  box-shadow: 1px 3px 3px rgba(0, 10, 20, 0.06);
-}
-
-.card h1, .card h2, .card h3, .card h4, .card p {
-  margin-top: 0;
-  font-weight: normal;
-}
-
 .verticalLine {
   border-left: thick solid #c3d434;
 }
@@ -111,8 +89,4 @@ a:hover {
 
 .portfolio-item {
   margin-bottom: 30px;
-}
-
-img {
-  border-radius: 0px;
 }/*# sourceMappingURL=index.css.map */

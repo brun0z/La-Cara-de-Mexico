@@ -19,6 +19,22 @@
   #middle-content .numbers{
     height: 245px;
     overflow: hidden;
+    
+
+  }
+
+  #middle-content img{
+    max-height: 300px;
+    max-width: 300px;
+  }
+
+  @media screen and (max-width: 500px) {
+      #middle-content .numbers .btn{
+        display: none;
+      }
+      #middle-content .numbers{
+        height: 230px;
+      }
 
   }
 
@@ -96,7 +112,7 @@
                 <div class=" info-icon text-center icon-primary">
                   <p>  
                     <a href="news-details.php?nid=<?=($row['pid'])?>">   
-                      <img class="img-fluid  bd-placeholder-img bd-placeholder-img-lg "   src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+                      <img class="card-img bd-placeholder-img bd-placeholder-img-lg mx-auto img-fluid"   src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
                     </a>   
                   </p>
                 </div>

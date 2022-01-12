@@ -1,6 +1,9 @@
 .side-titles {
   padding: 30px;
   background-color: #ececec;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 .side-titles h1 {
   color: #c3d434;

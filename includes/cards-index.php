@@ -13,7 +13,13 @@
     height: 300px;
   }
 
+  #middle-content-bt img{
+    max-height: 230px;
+    max-width: 230px;
+  }
+
   #middle-content-bt button{
+
     float: right;
     cursor: pointer;
     border: none;
@@ -26,8 +32,18 @@
   }
 
   #middle-content-bt .numbers{
-    height: 210px;
+    height: 225px;
     overflow: hidden;
+  }
+
+  @media screen and (max-width: 500px) {
+      #middle-content-bt .numbers .btn{
+        display: none;
+      }
+      #middle-content-bt .numbers{
+        height: 220px;
+      }
+
   }
 
   #middle-content-bt .col-7{
@@ -99,7 +115,7 @@
           <div class=" info-icon text-center icon-primary">
             <p> 
             <a href="news-details.php?nid=<?=($row['pid'])?>">   
-              <img class="img-fluid  bd-placeholder-img bd-placeholder-img-lg"   src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
+              <img class="card-img bd-placeholder-img bd-placeholder-img-lg mx-auto img-fluid" src="admin/postimages/<?php echo htmlentities($row['PostImage']);?>" alt="<?php echo htmlentities($row['posttitle']);?>">
             </a>   
             </p>
           </div>
@@ -111,8 +127,13 @@
               </a>
               <div class="btn text-white mt-2 mb-2" style=" background-color: rgb(195, 212, 52); border-radius: 0px;">
                 <small><strong><?php echo ($row['postingdate']);?></strong></small> 
-              </div>              
-              <p class=" card-category">  <?php $pt=$row['postdetails']; echo  (substr($pt,0));?></p>
+              </div>        
+               
+              <div>
+                <figure>
+                  <div class="before"> <p class="card-category"><?php $pt=$row['postdetails']; echo  (substr($pt,0));?></p> </div>
+                </figure>
+              </div>
             </div>
           </div>
         </div>
